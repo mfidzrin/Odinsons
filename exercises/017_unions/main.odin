@@ -1,3 +1,19 @@
+/*
+ A union holds exactly one of several possible types. To read the value you
+ perform a type assertion, which yields the value and an `ok` boolean.
+
+ Relevant syntax:
+   s, ok := val.(string)     // assert val holds a string
+   if ok { fmt.println(s) }
+
+ The assertion uses dot-parentheses `.(Type)`, NOT a function-style call
+ `val(string)`. The broken code uses the wrong syntax.
+
+ Level: Intermediate
+
+ @author fidzr
+*/
+
 package main
 
 import "core:fmt"

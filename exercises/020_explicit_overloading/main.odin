@@ -1,3 +1,20 @@
+/*
+ Odin does NOT support implicit procedure overloading. To expose several
+ implementations under one name you use explicit overloading with `proc{}`.
+
+ Relevant syntax:
+   print_int   :: proc(val: int)    { ... }
+   print_string :: proc(val: string) { ... }
+   print_val   :: proc{ print_int, print_string }   // overload group
+
+ You cannot declare two procedures with the same name; give each a unique name
+ and group them under the desired identifier with `proc{ ... }`.
+
+ Level: Intermediate
+
+ @author fidzr
+*/
+
 package main
 
 import "core:fmt"

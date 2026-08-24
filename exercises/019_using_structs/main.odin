@@ -1,3 +1,22 @@
+/*
+ The `using` keyword embeds one struct's fields into another's namespace, so
+ they can be accessed directly on the outer value.
+
+ Relevant syntax:
+   Player :: struct {
+       name: string,
+       using pos: Position,   // embed Position's fields into Player
+   }
+
+ `using` must appear BEFORE the field it attaches to. The broken code writes
+ `pos: Position, using,` (after the field and a comma), which is invalid.
+ With the correct form, `player.x` and `player.y` become reachable.
+
+ Level: Intermediate
+
+ @author fidzr
+*/
+
 package main
 
 import "core:fmt"
