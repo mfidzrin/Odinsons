@@ -34,17 +34,26 @@ check_one() {
     fi
     actual="$(/tmp/odinsons_bin)"; rc=$?
     rm -f /tmp/odinsons_bin
+    # Show the program output in its own section
+    echo -e "\n\033[1m--- Program output ---\033[0m"
+    if [ -n "$actual" ]; then
+        printf '%s\n' "$actual"
+    else
+        echo "(no output)"
+    fi
+    echo -e "\033[1m----------------------\033[0m"
     if [ $rc -ne 0 ]; then
-        echo -e "\033[31m✘ $ex exited with code $rc.\033[0m"
+        echo -e "\033[31m✘ $ex exited with code $rc. Fix it and run ./odinsons.sh again.\033[0m"
         return 1
     fi
     if [ "$expected" != "*" ] && [ "$actual" != "$(printf '%b' "$expected")" ]; then
-        echo -e "\033[31m✘ Wrong output:\033[0m"
+        echo -e "\033[31m✘ $ex ran but the output is wrong:\033[0m"
         diff <(printf '%b' "$expected") <(printf '%s\n' "$actual") && true
+        echo -e "\033[31mFix the logic and run ./odinsons.sh again.\033[0m"
         return 1
     fi
     mark_done "$ex"
-    echo -e "\033[32m✔ $ex complete!\033[0m"
+    echo -e "\n\033[32m✔ $ex complete!\033[0m \033[2m(output matched — nice work)\033[0m"
     return 0
 }
 
