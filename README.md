@@ -40,6 +40,21 @@ Progress is tracked in `.progress` (gitignored).
 | 009 | defer | Deferred execution |
 | 010 | procedures | Defining procedures |
 
+## Exercises — Batch 2
+
+| # | Exercise | Concept |
+|---|----------|---------|
+| 011 | arrays | Fixed-size arrays & indexing |
+| 012 | slices | Slices vs arrays, half-open interval |
+| 013 | dynamic_arrays | `[dynamic]T`, `append(&x)` |
+| 014 | maps | Map struct-field update constraint |
+| 015 | structs | Positional struct literals |
+| 016 | enums | Implicit selector `.Red` & inference |
+| 017 | unions | Type assertions `val.(Type)` |
+| 018 | pointers | Pascal-style `^` and `p^` |
+| 019 | using_structs | `using` embedded fields |
+| 020 | explicit_overloading | Explicit `proc{}` overloading |
+
 ## License
 
 MIT

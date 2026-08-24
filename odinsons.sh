@@ -20,6 +20,16 @@ exercises=(
     "008_switch|Good!\nKeep it up!"
     "009_defer|10"
     "010_procedures|Result: 30"
+    "011_arrays|Last element is: 30"
+    "012_slices|Slice contains: [1, 1, 2]"
+    "013_dynamic_arrays|Dynamic array contents: [42]"
+    "014_maps|Bob's age: 31"
+    "015_structs|Vector: Vector3{x = 10, y = 20, z = 30}"
+    "016_enums|Color is: Red"
+    "017_unions|String value is: Odinsons"
+    "018_pointers|Doubled value is: 200"
+    "019_using_structs|Player name: Thor\nPlayer coordinates: 10 20"
+    "020_explicit_overloading|Integer: 42\nString: Allfather"
 )
 
 is_done() { grep -qx "$1" "$PROGRESS"; }
